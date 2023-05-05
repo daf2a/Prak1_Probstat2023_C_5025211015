@@ -12,7 +12,7 @@ NRP Praktikan : 5025211015
 
 ### 1. Pendistribusian Banyak Bayi Laki-laki
 
-a. Dalam soal tersebut, kita diminta untuk menghitung probabilitas jumlah bayi laki-laki dalam 10 kelahiran, di mana probabilitas bayi laki-laki dalam setiap kelahiran adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan distribusi binomial
+a. Dalam soal tersebut, diminta untuk menghitung probabilitas jumlah bayi laki-laki dalam 10 kelahiran, di mana probabilitas bayi laki-laki dalam setiap kelahiran adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan distribusi binomial
 <br />
 
 b. Probabilitas tepat 3 bayi berjenis kelamin laki-laki adalah:
@@ -23,7 +23,8 @@ n_bayi = 10
 dbinom(3, n_bayi, p_laki_laki)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![1b](/img/1b.png)
 
 Penjelasan : Probabilitas tepat 3 bayi berjenis kelamin laki-laki adalah hasil dari fungsi dbinom(3, n_bayi, p_laki_laki) yang menghitung probabilitas binomial dengan 10 percobaan (kelahiran) dan probabilitas keberhasilan (bayi laki-laki) sebesar 0,488 pada percobaan tersebut.
 <br />
@@ -36,7 +37,8 @@ n_bayi = 10
 pbinom(2, n_bayi, p_laki_laki)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![1c](/img/1c.png)
 
 Penjelasan : Probabilitas kurang dari 3 bayi berjenis kelamin laki-laki adalah hasil dari fungsi pbinom(2, n_bayi, p_laki_laki) yang menghitung probabilitas kumulatif binomial dengan 10 percobaan (kelahiran) dan probabilitas keberhasilan (bayi laki-laki) sebesar 0,488 pada percobaan tersebut, pada kategori kurang dari 3 (yaitu 0, 1, atau 2 bayi laki-laki).
 <br />
@@ -49,7 +51,8 @@ n_bayi = 10
 pbinom(2, n_bayi, p_laki_laki, lower.tail = FALSE)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![1d](/img/1d.png)
 
 Penjelasan : Probabilitas tiga atau lebih bayi berjenis kelamin laki-laki adalah hasil dari fungsi pbinom(2, n_bayi, p_laki_laki, lower.tail = FALSE) yang menghitung probabilitas kumulatif binomial dengan 10 percobaan (kelahiran) dan probabilitas keberhasilan (bayi laki-laki) sebesar 0,488 pada percobaan tersebut, pada kategori tiga atau lebih (yaitu 3, 4, ..., atau 10 bayi laki-laki).
 <br />
@@ -71,7 +74,8 @@ sd <- sqrt(n_bayi*p_laki_laki*q)
 print(sd)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![1e](/img/1e.png)
 
 Penjelasan : Nilai harapan banyak bayi laki-laki dapat dihitung dengan rumus E(X) = n _ p, di mana n adalah banyak percobaan (10 kelahiran) dan p adalah probabilitas keberhasilan (bayi laki-laki) pada setiap percobaan. Sedangkan nilai simpangan baku dapat dihitung dengan rumus SD = sqrt(n _ p \* q), di mana q adalah probabilitas kegagalan (bayi perempuan) pada setiap percobaan.
 <br />
@@ -86,14 +90,15 @@ freq <- dbinom(x, n_bayi, p_laki_laki)
 barplot(freq, names.arg = x, main = "Histogram Banyak Bayi Laki-laki", xlab = "Banyak Bayi Laki-laki", ylab = "Probability")
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![1f](/img/1f.png)
 
 Penjelasan : Histogram pendistribusian banyak bayi laki-laki dibuat dengan menggunakan fungsi barplot, di mana freq adalah vektor probabilitas distribusi binomial pada setiap nilai x (0 hingga 10) yang dihitung dengan menggunakan fungsi dbinom(x, n_bayi, p_laki_laki).
 <br /> <br />
 
 ### 2. Pendistribusian Banyak Kematian akibat Kanker Tulang
 
-a. Dalam soal tersebut, kita diminta untuk menghitung probabilitas jumlah kematian akibat kanker tulang di antara pekerja pabrik ban, di mana probabilitas kematian akibat kanker tulang adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan **distribusi poisson**
+a. Dalam soal tersebut, diminta untuk menghitung probabilitas jumlah kematian akibat kanker tulang di antara pekerja pabrik ban, di mana probabilitas kematian akibat kanker tulang adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan **distribusi poisson**
 <br />
 
 b. Probabilitas 4 kematian akibat kanker tulang di antara pekerja pabrik ban adalah:
@@ -104,9 +109,10 @@ lambda = 1.8
 ppois(x, lambda)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2b](/img/2b.png)
 
-Penjelasan : Untuk menghitung probabilitas 4 kematian akibat kanker tulang di antara pekerja pabrik ban, kita menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal).<br />
+Penjelasan : Untuk menghitung probabilitas 4 kematian akibat kanker tulang di antara pekerja pabrik ban, menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal).<br />
 
 c. Peluang paling banyak 4 kematian akibat kanker tulang adalah:
 
@@ -116,9 +122,10 @@ lambda = 1.8
 ppois(x, lambda, lower.tail = TRUE)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2c](/img/2c.png)
 
-Penjelasan : Untuk menghitung peluang paling banyak 4 kematian akibat kanker tulang di antara pekerja pabrik ban, kita menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal) serta lower.tail=TRUE (untuk menghitung peluang dari 0 hingga 4 kematian).<br />
+Penjelasan : Untuk menghitung peluang paling banyak 4 kematian akibat kanker tulang di antara pekerja pabrik ban, menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal) serta lower.tail=TRUE (untuk menghitung peluang dari 0 hingga 4 kematian).<br />
 
 d. Peluang lebih dari 4 kematian akibat kanker tulang adalah:
 
@@ -128,9 +135,10 @@ lambda = 1.8
 ppois(x, lambda, lower.tail = FALSE)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2d](/img/2d.png)
 
-Penjelasan : Untuk menghitung peluang lebih dari 4 kematian akibat kanker tulang di antara pekerja pabrik ban, kita menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal) serta lower.tail=FALSE (untuk menghitung peluang dari 5 kematian hingga tak terhingga).<br />
+Penjelasan : Untuk menghitung peluang lebih dari 4 kematian akibat kanker tulang di antara pekerja pabrik ban, menggunakan fungsi ppois() pada R dengan memasukkan nilai x=4 (jumlah kematian yang diinginkan) dan nilai lambda=1.8 (parameter distribusi Poisson yang diberikan pada soal) serta lower.tail=FALSE (untuk menghitung peluang dari 5 kematian hingga tak terhingga).<br />
 
 e. Nilai harapan banyak kematian akibat kanker tulang adalah:
 
@@ -140,7 +148,8 @@ Ex = lambda
 print(Ex)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2e](/img/2e.png)
 
 Penjelasan : Untuk menghitung nilai harapan banyak kematian akibat kanker tulang di antara pekerja pabrik ban, cukup menggunakan nilai lambda yang diberikan pada soal. Karena nilai harapan distribusi Poisson adalah sama dengan nilai lambda.
 
@@ -151,8 +160,6 @@ sd = sqrt(lambda)
 print(sd)
 ```
 
-Screenshoot :
-
 Penjelasan : Untuk menghitung simpangan baku, cukup menggunakan nilai lambda yang diberikan pada soal. Karena simpangan baku distribusi Poisson adalah sama dengan nilai akar dari lambda.<br />
 
 f. Histogram pendistribusian banyak kematian akibat kanker tulang:
@@ -161,9 +168,10 @@ f. Histogram pendistribusian banyak kematian akibat kanker tulang:
 hist(rpois(1000, 1.8), breaks = seq(-0.5, 10.5, 1), col = "gray", main = "History Distribusi Poisson", xlab = "Banyak Kematian Kanker Tulang")
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2f](/img/2f.png)
 
-Penjelasan : Fungsi hist untuk menghasilkan histogram dari distribusi Poisson dengan parameter lambda = 1.8. Kita menggunakan 1000 pengamatan untuk menghasilkan distribusi yang lebih halus. Parameter breaks digunakan untuk menentukan rentang kelas dalam histogram. <br />
+Penjelasan : Fungsi hist untuk menghasilkan histogram dari distribusi Poisson dengan parameter lambda = 1.8. menggunakan 1000 pengamatan untuk menghasilkan distribusi yang lebih halus. Parameter breaks digunakan untuk menentukan rentang kelas dalam histogram. <br />
 
 g. Simulasi pendistribusian banyak kematian akibat kanker tulang:
 
@@ -174,11 +182,12 @@ set.seed(123)
 rpois(n, lambda)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![2g](/img/2g.png)
 
-Penjelasan : Fungsi rpois untuk melakukan simulasi dari distribusi Poisson dengan parameter lambda = 1.8. Kita menggunakan nilai n = 20 untuk menghasilkan 20 pengamatan simulasi. Fungsi set.seed digunakan untuk memastikan hasil yang sama setiap kali kita menjalankan simulasi. <br />
+Penjelasan : Fungsi rpois untuk melakukan simulasi dari distribusi Poisson dengan parameter lambda = 1.8. menggunakan nilai n = 20 untuk menghasilkan 20 pengamatan simulasi. Fungsi set.seed digunakan untuk memastikan hasil yang sama setiap kali menjalankan simulasi. <br />
 
-h. Dari hasil simulasi, kita dapat melihat bahwa distribusi kematian akibat kanker tulang di antara pekerja pabrik ban mengikuti distribusi Poisson dengan parameter lambda sekitar 1,8. Hal ini konsisten dengan hasil perhitungan menggunakan distribusi Poisson. Oleh karena itu, dapat disimpulkan bahwa simulasi mendukung hasil perhitungan sebelumnya.<br /> <br />
+h. Dari hasil simulasi, dapat melihat bahwa distribusi kematian akibat kanker tulang di antara pekerja pabrik ban mengikuti distribusi Poisson dengan parameter lambda sr 1,8. Hal ini konsisten dengan hasil perhitungan menggunakan distribusi Poisson. Oleh karena itu, dapat disimpulkan bahwa simulasi mendukung hasil perhitungan sebelumnya.<br /> <br />
 
 ### 3. Distribusi Chi-Square
 
@@ -190,9 +199,10 @@ df = 10
 dchisq(x, df)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![3a](/img/3a.png)
 
-Penjelasan : Untuk menghitung fungsi probabilitas dari distribusi Chi-Square, kita menggunakan fungsi dchisq() pada R dengan memasukkan nilai x=3 (nilai yang diinginkan) dan nilai df=10 (parameter distribusi Chi-Square yang diberikan pada soal).<br />
+Penjelasan : Untuk menghitung fungsi probabilitas dari distribusi Chi-Square, menggunakan fungsi dchisq() pada R dengan memasukkan nilai x=3 (nilai yang diinginkan) dan nilai df=10 (parameter distribusi Chi-Square yang diberikan pada soal).<br />
 
 b. Histogram dari distribusi Chi-Square dengan 500 data acak:
 
@@ -204,7 +214,8 @@ data <- rchisq(n, df)
 hist(data, breaks = 20, main = "Histogram Chi-Square", xlab = "Nilai")
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![3b](/img/3b.png)
 
 Penjelasan : Histogram dari distribusi Chi-Square dapat dibuat dengan menghasilkan sejumlah data acak dari distribusi tersebut menggunakan fungsi rchisq() pada R dan kemudian menampilkan histogram dari data tersebut menggunakan fungsi hist(). <br />
 
@@ -219,9 +230,10 @@ mean(data)
 var(data)
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![3c](/img/3c.png)
 
-Penjelasan : Untuk menghitung nilai rataan dan varian dari distribusi Chi-Square, kita menggunakan fungsi mean() dan var() pada R dengan memasukkan data yang dihasilkan dari fungsi rchisq() pada soal sebelumnya.<br />
+Penjelasan : Untuk menghitung nilai rataan dan varian dari distribusi Chi-Square, menggunakan fungsi mean() dan var() pada R dengan memasukkan data yang dihasilkan dari fungsi rchisq() pada soal sebelumnya.<br />
 
 ### 4. Distribusi Normal
 
@@ -259,7 +271,7 @@ z_x2 <- (x2 - mean_normal) / sd_normal
 z_x
 ```
 
-Plot data bangkitan acak dalam bentuk grafik:
+Plot data bann acak dalam bentuk grafik:
 
 ```R
 set.seed(123)
@@ -272,6 +284,8 @@ abline(v = x1, col = "red", lwd = 2)
 abline(v = x2, col = "red", lwd = 2)
 ```
 
+Screenshoot : <br />
+![4a](/img/4a.png)
 <br />
 
 b. Histogram dari distribusi Normal dengan breaks = 50:
@@ -282,15 +296,21 @@ hist(x, breaks = 50, main = "Histogram Distribusi Normal", xlab = "x", ylab = "D
 lines(x_normal, y_normal, col = "red", lwd = 2)
 ```
 
+Screenshoot : <br />
+![4b](/img/4b.png)
+
 <br />
-c. Nilai varian (σ²) dari hasil data bangkitan acak distribusi Normal adalah:
+c. Nilai varian (σ²) dari hasil data bann acak distribusi Normal adalah:
 
 ```R
 var_normal <- var(data_normal)
 var_normal
 ```
 
-<br /> <br />
+Screenshoot : <br />
+![4c](/img/4c.png)
+
+<br />
 
 ### 5. Distribusi T-Student
 
@@ -304,10 +324,11 @@ p_t1 <- pt(x_t1, df_t)
 p_t1
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5a](/img/5a.png)
 
 Penjelasan : Fungsi pt() digunakan untuk menghitung probabilitas terjadinya suatu peristiwa acak X kurang dari -2,34 dengan 6 derajat kebebasan.
-<br />
+<br /><br />
 b. Probabilitas terjadinya suatu peristiwa acak X lebih dari 1,34 dengan 6 derajat kebebasan adalah:
 
 ```R
@@ -317,10 +338,11 @@ p_t2 <- 1 - pt(x_t2, df_t)
 p_t2
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5b](/img/5b.png)
 
 Penjelasan : Fungsi pt() digunakan untuk menghitung probabilitas terjadinya suatu peristiwa acak X lebih dari 1,34 dengan 6 derajat kebebasan.
-<br />
+<br /><br />
 c. Probabilitas terjadinya suatu peristiwa acak X kurang dari -1,23 atau lebih besar dari 1,23 dengan 3 derajat kebebasan adalah:
 
 ```R
@@ -332,10 +354,11 @@ p_t3 <- pt(x_t3, df_t2) + (1 - pt(x_t4, df_t2))
 p_t3
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5c](/img/5c.png)
 
 Penjelasan : Fungsi pt() digunakan untuk menghitung probabilitas terjadinya suatu peristiwa acak X kurang dari -1,23 atau lebih besar dari 1,23 dengan 3 derajat kebebasan.
-<br />
+<br /><br />
 d. Probabilitas terjadinya suatu peristiwa acak X berada di antara -0,94 dan 0,94 dengan 14 derajat kebebasan adalah:
 
 ```R
@@ -347,10 +370,11 @@ p_t4 <- pt(x_t6, df_t3) - pt(x_t5, df_t3)
 p_t4
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5d](/img/5d.png)
 
 Penjelasan : Fungsi pt() digunakan untuk menghitung probabilitas terjadinya suatu peristiwa acak X berada di antara -0,94 dan 0,94 dengan 14 derajat kebebasan.
-<br />
+<br /><br />
 e. Nilai t-score dengan 5 derajat kebebasan yang memiliki luasan 0,0333 satuan persegi di bawah kurva dan di sebelah kiri t-score tersebut adalah:
 
 ```R
@@ -360,10 +384,11 @@ p_t5 <- 0.0333
 x_t7 <- qt(p_t5, df_t4, lower.tail = TRUE
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5e](/img/5e.png)
 
 Penjelasan : Fungsi qt() digunakan untuk menghitung nilai t-score dengan 5 derajat kebebasan yang memiliki luasan 0,0333 satuan persegi di bawah kurva dan di sebelah kiri t-score tersebut.
-<br />
+<br /><br />
 
 f. Nilai t-score dengan 25 derajat kebebasan yang memiliki luasan 0,125 satuan persegi di bawah kurva dan di sebelah kanan t-score tersebut adalah:
 
@@ -375,10 +400,11 @@ x_t8 <- qt(p_t6, df_t5, lower.tail = FALSE)
 x_t8
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5f](/img/5f.png)
 
 Penjelasan : Fungsi qt() digunakan untuk menghitung nilai t-score dengan 25 derajat kebebasan yang memiliki luasan 0,125 satuan persegi di bawah kurva dan di sebelah kanan t-score tersebut.
-<br />
+<br /><br />
 g. Nilai t-score dengan 11 derajat kebebasan yang memiliki luasan 0,75 satuan persegi di bawah kurva dan di antara t-score tersebut dan negatif dari nilai t-score tersebut adalah:
 
 ```R
@@ -391,11 +417,11 @@ x_t9
 x_t10
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5g](/img/5g.png)
 
 Penjelasan : Fungsi qt() digunakan untuk menghitung nilai t-score dengan 11 derajat kebebasan yang memiliki luasan 0,75 satuan persegi di bawah kurva dan di antara t-score tersebut dan negatif dari nilai t-score tersebut.
-<br />
-
+<br /><br />
 h. Nilai t-score dengan 23 derajat kebebasan yang memiliki luasan 0,0333 satuan persegi di bawah kurva dan di luar interval antara t-score tersebut dan negatif dari nilai t-score tersebut adalah:
 
 ```R
@@ -408,6 +434,7 @@ x_t11
 x_t12
 ```
 
-Screenshoot :
+Screenshoot : <br />
+![5h](/img/5h.png)
 
 Penjelasan : Fungsi qt() digunakan untuk menghitung nilai t-score dengan 23 derajat kebebasan yang memiliki luasan 0,0333 satuan persegi di bawah kurva dan di luar interval antara t-score tersebut dan negatif dari nilai t-score tersebut.
