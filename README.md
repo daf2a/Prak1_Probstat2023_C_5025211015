@@ -14,9 +14,8 @@ NRP Praktikan : 5025211015
 
 ### 1. Pendistribusian Banyak Bayi Laki-laki
 
- <br /> 
 a. Dalam soal tersebut, kita diminta untuk menghitung probabilitas jumlah bayi laki-laki dalam 10 kelahiran, di mana probabilitas bayi laki-laki dalam setiap kelahiran adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan distribusi binomial
- <br /> <br />
+<br /> <br />
 
 b. Probabilitas tepat 3 bayi berjenis kelamin laki-laki adalah:
 
@@ -95,8 +94,6 @@ Penjelasan : Histogram pendistribusian banyak bayi laki-laki dibuat dengan mengg
 <br /> <br /> <br />
 
 ### 2. Pendistribusian Banyak Kematian akibat Kanker Tulang
-
-<br />
 
 a. Dalam soal tersebut, kita diminta untuk menghitung probabilitas jumlah kematian akibat kanker tulang di antara pekerja pabrik ban, di mana probabilitas kematian akibat kanker tulang adalah konstan. Oleh karena itu, metode yang cocok untuk menghitung adalah dengan **distribusi poisson**
 <br /> <br />
@@ -187,7 +184,6 @@ h. Dari hasil simulasi, kita dapat melihat bahwa distribusi kematian akibat kank
 
 ### 3. Distribusi Chi-Square
 
-<br /> 
 a. Fungsi probabilitas dari distribusi Chi-Square dengan v = 10 adalah:
 
 ```R
@@ -231,7 +227,6 @@ Penjelasan : Untuk menghitung nilai rataan dan varian dari distribusi Chi-Square
 
 ### 4. Distribusi Normal
 
-<br />
 a. Fungsi probabilitas dari distribusi Normal dengan mean = 45 dan sd = 5 adalah:
 
 ```R
@@ -301,7 +296,6 @@ var_normal
 
 ### 5. Distribusi T-Student
 
-<br /> 
 a. Probabilitas terjadinya suatu peristiwa acak X kurang dari -2,34 dengan 6 derajat kebebasan adalah:
 
 ```R
