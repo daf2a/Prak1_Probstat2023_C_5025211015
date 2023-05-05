@@ -286,6 +286,7 @@ abline(v = x2, col = "red", lwd = 2)
 
 Screenshoot : <br />
 ![4a](/img/4a.png)
+![4a2](/img/4ab.png)
 <br />
 
 b. Histogram dari distribusi Normal dengan breaks = 50:
